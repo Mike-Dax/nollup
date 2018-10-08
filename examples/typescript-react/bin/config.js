@@ -6,8 +6,7 @@ let replace = require('rollup-plugin-replace');
 let commonjs = require('rollup-plugin-commonjs');
 let path = require('path');
 let typescript = require('rollup-plugin-typescript');
-//let buble = require('rollup-plugin-buble');
-let autoExternal = require('rollup-plugin-auto-external');
+// let buble = require('rollup-plugin-buble');
 
 module.exports = {
     input: './src/main.tsx',
@@ -18,12 +17,6 @@ module.exports = {
         assetFileNames: '[name][extname]'
     },
     plugins: [
-        autoExternal({
-            builtins: true,
-            dependencies: true,
-            packagePath: path.resolve(process.cwd(), 'package.json'),
-            peerDependencies: true,
-        }),
         typescript(),
         commonjs(),
         alias({
@@ -46,9 +39,9 @@ module.exports = {
           'commonjsHelpers.commonjsRequire': 'require',
         }),
         style_link(),
-        /*buble({
+        /* buble({
             target: { node: 10 }
-        }),*/
+        }), */
         node_resolve()
     ]
 }
