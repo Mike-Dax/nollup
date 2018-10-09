@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-// import './Switch.css'
+import './Switch.css'
 
 export default class Switch extends React.Component {
     state = {

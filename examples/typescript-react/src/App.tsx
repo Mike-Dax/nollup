@@ -2,7 +2,7 @@ import * as React from 'react';
 import Counter from './Counter';
 import { Internal } from './Internal';
 import Switch from './Switch';
-// import './App.css';
+import './App.css';
 
 //#if _DEBUG
 import HotManager from './HotManager';
