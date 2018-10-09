@@ -18,7 +18,12 @@ module.exports = {
     },
     plugins: [
         typescript(),
-        commonjs(),
+        commonjs({
+            namedExports: {
+                'node_modules/react/cjs/react.development.js': ['Component', 'createElement'],
+                'node_modules/react-dom/cjs/react-dom.development.js': ['render']
+            }
+        }),
         alias({
             react: path.resolve(
                 process.cwd(),
